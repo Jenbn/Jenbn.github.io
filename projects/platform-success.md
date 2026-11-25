@@ -6,13 +6,12 @@ permalink: /projects/platform-success/
 
 [← All projects]({{ '/projects/' | relative_url }})
 
-# Platform Success Metrics
+### Platform Success Metrics
 
-Support demand, developer self-service, feedback and the value of internal platforms.
+**Focus:** Developer Experience · Platform Metrics · Product Thinking
 
-## Project materials
+Exploring how internal platform teams can measure success beyond feature delivery. Through support-ticket analysis, self-service usage data and developer feedback, I identified recurring friction, informed documentation improvements and explored ways to evaluate platform value.
 
-- [Read the case study](https://github.com/Jenbn/technical-ba-platform-portfolio/blob/main/04-platform-success-metrics/case-study.md)
-- [Read the project overview](https://github.com/Jenbn/technical-ba-platform-portfolio/blob/main/04-platform-success-metrics/README.md)
+[Read the case study]({{ '/case-studies/platform-success-metrics/' | relative_url }})
 
-These source documents are retained in the original repository. In the next learning step, we can convert them to Jekyll content pages using layouts and front matter.
+[Explore the project on GitHub](https://github.com/Jenbn/technical-ba-platform-portfolio/tree/main/04-platform-success-metrics)

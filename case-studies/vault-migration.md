@@ -12,7 +12,7 @@ permalink: /case-studies/vault-migration/
 
 Migrating from HashiCorp Vault to AWS Secrets Manager (AWS SM) wasn't just a technical change. It also required understanding how different users interacted with the service, what challenges they faced and which existing workflows needed to be preserved or improved.
 
-As a Business Analyst (BA) in the Platform Team responsible for the migration, I contributed to discovery, user research and release planning. This case study explores how we brought user needs into a technically driven initiative and translated research findings into an agreed Minimum Viable Product (MVP) strategy.
+This case study explores how user research and collaborative story mapping informed migration requirements and an agreed Minimum Viable Product (MVP) strategy.
 
 The supporting materials include reconstructed examples and retrospective proposals. Confidential information has been anonymised or omitted, and the proposed success metrics are not presented as measured project outcomes.
 
@@ -35,18 +35,18 @@ However, replacing the technology was only part of the challenge. Different user
 
 **The key question was: How could we make the migration technically beneficial while ensuring the new solution supported the people using it?**
 
-## My Role & Approach
+## My Contribution to Discovery and Planning
 
-As a BA, my focus was on understanding how different user groups interacted with Vault and identifying their needs before defining requirements for the migration.
+I worked within the Platform Team responsible for maintaining Vault and planning its replacement with AWS Secrets Manager.
 
-I collaborated with a Platform Owner, UX designers and other members of my platform team throughout the discovery and planning activities. My main contributions included:
+My contributions included:
 
-- **Stakeholder identification:** Worked in a pair with a Platform Owner to identify seven stakeholder groups, including both consumers of the service and our own platform team.
-- **User interviews:** Collaborated with the Platform Owner to prepare interview questions and facilitated interviews with representatives from the different stakeholder groups. UX designers supported the sessions by documenting participants' responses.
-- **Research synthesis:** Worked with UX designers to review, categorise and present interview findings to our platform team, highlighting common challenges and differences between user groups.
-- **Story mapping:** Prepared and facilitated a Mural workshop with our platform team, connecting user workflows, pain points and expectations to potential work items and release planning.
+- **Stakeholder research:** Partnered with a Platform Owner to identify stakeholder groups and prepare interview questions.
+- **Interview facilitation:** Led 12 individual interviews and one Platform Team group interview, supported by a UX designer who documented the conversations.
+- **Research synthesis:** Reviewed and categorised findings with the UX designer, then presented the insights to our Platform Team.
+- **Story mapping:** Prepared and facilitated a Mural workshop, working with the team to translate user needs into activities, potential work items and release planning.
 
-The goal was to develop a shared understanding of user needs and use those insights to inform migration scope, priorities and backlog decisions.
+I also participated in agreeing the initial MVP and second-release split with the Tech Lead, Product Owner and Platform Owners.
 
 ## Discovery
 
@@ -80,11 +80,11 @@ An important finding was that users generally found Vault straightforward once t
 
 These findings represented users' experiences with our implementation, rather than limitations inherent to HashiCorp Vault. They informed subsequent technical discussions and user story mapping, but did not automatically become approved implementation requirements.
 
-## Turning Research Into Requirements
+## From Research Findings to Migration Planning
 
 Following the discovery activities, I prepared and facilitated a story-mapping workshop in Mural to help our Platform Team translate research findings into actionable work and define an initial migration strategy.
 
-### From User Needs to a Shared User Story Map
+### Mapping User Activities and Dependencies
 
 Before the workshop, I prepared the stakeholder groups, high-level activities and narrative flow, incorporating insights from our discovery.
 
@@ -105,7 +105,7 @@ The objective was to validate the essential workflows with a small group of user
 
 The story map gave us a shared reference for discussing work items, dependencies and release priorities. Technical investigation tasks were tracked separately as spikes.
 
-### Planning the New Operating Model
+### Defining Responsibilities and Automation
 
 Alongside release planning, we considered how AWS SM could simplify existing workflows and reduce manual administration.
 

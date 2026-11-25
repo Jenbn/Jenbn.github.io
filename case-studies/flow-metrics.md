@@ -8,16 +8,19 @@ permalink: /case-studies/flow-metrics/
 
 *Technical Business Analysis · Platform Teams · Delivery Predictability · Retrospective Forecasting*
 
-## About this case study
+## About This Case Study
 
-As a Technical Business Analyst in a platform team, I used **flow and delivery metrics** to question planning assumptions, identify workflow bottlenecks and support practical improvements with the Product Owner (PO), Tech Lead and team.
+*How can teams make more realistic delivery commitments without relying solely on estimates?*
 
-This case study brings together two distinct experiences:
+This case study explores how I used flow metrics to identify delivery patterns, investigate bottlenecks and support more informed planning discussions.
 
-- **During the project:** I used historical delivery data and investigated specific work items to inform planning and improve how we worked.
-- **Afterwards:** I explored **Monte Carlo forecasting** in Google Sheets as a retrospective learning exercise. I did not use Monte Carlo in the original project.
+Through eazyBI analysis and collaboration with the Product Owner, Tech Lead and the Platform team, we introduced changes to sprint planning, review workflows and work-item slicing.
 
-### Explore the analysis
+I later extended this experience through a retrospective Monte Carlo forecasting exercise using synthetic data in Google Sheets. The simulations were created for learning purposes and were not used during the original project.
+
+All fictional data and simulations are clearly distinguished from the professional experiences described here.
+
+### Explore The Analysis
 
 The supporting workbook models a fictional team, **Team Aqueduct**, using synthetic data—not historical records from my employer. It contains the metric calculations, charts and forecasting simulations.
 
@@ -25,7 +28,7 @@ The supporting workbook models a fictional team, **Team Aqueduct**, using synthe
 - **[Read the dataset README](https://github.com/Jenbn/technical-ba-platform-portfolio/blob/main/03-flow-metrics-forecasting/README.md)** — Modelling context, AI assistance and limitations.
 - **[Explore the Analysis in Google Sheets](https://docs.google.com/spreadsheets/d/1PH6bDGx60KW_-77tscZUf3W54xKOBAM4CkPxAl1xB3I/edit?usp=sharing)** - View the metrics, charts and Monte Carlo simulations.
 
-## Flow metrics at a glance
+## Flow Metrics at a Glance
 
 | Metric | What it tells us | How I used it |
 | --- | --- | --- |

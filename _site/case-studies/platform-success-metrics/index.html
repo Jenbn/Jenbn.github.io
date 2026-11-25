@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Exploring product thinking, developer experience and data-informed decisions through real-world platform challenges.">
+  <title>Platform Success Metrics — Case Study · From Complexity to Clarity</title>
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="/">Technical BA <span>/ Product Portfolio</span></a>
+      <nav aria-label="Main navigation">
+        <a href="/">Home</a>
+        <a href="/projects/">Projects</a>
+        <a href="/about/">About Me</a>
+        <a href="https://github.com/Jenbn/technical-ba-platform-portfolio">GitHub</a>
+      </nav>
+    </div>
+  </header>
+  <main class="container page-content">
+    <h1 id="measuring-what-matters-in-platform-teams">Measuring What Matters in Platform Teams</h1>
+
+<p><em>Platform Teams · Developer Experience · Product Thinking · Metrics</em></p>
+
+<h2 id="about-this-case-study">About This Case Study</h2>
+
+<p>How do we know whether an internal platform is successful? Is delivering features enough, or should we also understand whether those features make developers’ work easier?</p>
+
+<p>Supporting development teams involves more than delivering new capabilities. It also means understanding how people use them, where they encounter friction and whether they can work independently.</p>
+
+<p>This case study explores how I used support ticket analysis, self-service usage data and developer feedback to identify recurring challenges, communicate the value of platform capabilities and inform improvements.</p>
+
+<p>It also reflects on measurement approaches I considered but did not implement, and the limitations of interpreting metrics without sufficient context.</p>
+
+<p>The examples are based on professional experience and recollections. Confidential information has been omitted, and observed patterns are distinguished from quantitatively verified outcomes.</p>
+
+<h2 id="context--challenge">Context &amp; Challenge</h2>
+
+<p>Our internal platform provided shared capabilities to stream-aligned development teams, including CI/CD, cloud infrastructure, access management and support services.</p>
+
+<p>While delivery metrics helped us understand how work progressed, they didn’t show the full picture of how developers experienced our platform.</p>
+
+<p>I wanted to better understand whether teams were using our services independently, where they encountered recurring friction and what we could learn from their feedback.</p>
+
+<p>To explore these questions, I combined support-ticket analysis, self-service usage data and direct conversations with developers.</p>
+
+<h2 id="from-signals-to-improvements">From Signals to Improvements</h2>
+
+<h3 id="1-support-tickets">1. Support Tickets</h3>
+
+<h4 id="analysing-support-patterns">Analysing Support Patterns</h4>
+
+<p>Our Platform Team used support tickets to handle questions, requests and issues from stream-aligned teams.</p>
+
+<p>I regularly reviewed ticket classifications and created an eazyBI report showing ticket volumes by category, sprint and Program Increment (PI). This helped me identify recurring topics and potential gaps between the services we provided and how teams understood or used them.</p>
+
+<p>Several patterns emerged:</p>
+
+<ul>
+  <li>Some teams were unaware that they should use the relevant self-service pipeline to obtain production database access rather than requesting it directly from the Platform Team.</li>
+  <li>Teams frequently requested assistance with their own CI/CD pipelines, even though operating those pipelines was their responsibility under our shared responsibility model.</li>
+  <li>Questions about database provisioning, AWS services and database queries appeared repeatedly.</li>
+</ul>
+
+<h4 id="improving-documentation-and-communication">Improving Documentation and Communication</h4>
+
+<p>These findings highlighted opportunities to improve communication and make existing information easier to find.</p>
+
+<p>I took several actions:</p>
+
+<ul>
+  <li>Updated FAQ answers to address recurring questions and shared relevant documentation links in Slack.</li>
+  <li>Reorganised Confluence documentation by archiving outdated content, separating internal technical guidance from user-facing information and making frequently needed information more prominent.</li>
+  <li>Co-presented a project-wide technical huddle explaining where to find documentation, when to contact the Platform Team and what to check before raising a support ticket.</li>
+</ul>
+
+<h4 id="understanding-the-causes-behind-support-requests">Understanding the Causes Behind Support Requests</h4>
+
+<p>The analysis suggested that some support requests were driven by unclear responsibilities, limited awareness of existing capabilities or difficulty finding relevant information.</p>
+
+<p>I observed changes in support behaviour following these improvements, but did not establish a quantified reduction in tickets or prove that the documentation changes caused those changes.</p>
+
+<p>The experience reinforced an important lesson: <strong>support tickets aren’t just operational work. They can also provide useful signals about documentation, discoverability and the developer experience.</strong></p>
+
+<h3 id="2-temporary-production-database-access">2. Temporary Production Database Access</h3>
+
+<h4 id="tracking-feature-usage">Tracking Feature Usage</h4>
+
+<p>One of my team’s offerings was a self-service capability that allowed stream-aligned teams to request temporary access to production databases for troubleshooting.</p>
+
+<p>Before this capability was available, teams relied on the Platform Team to arrange access manually.</p>
+
+<p>I regularly reviewed an existing dashboard that tracked access requests, usage frequency and access duration. The underlying Python script, which used the GitHub API, had been developed by a previous Product Owner. My contribution was analysing and communicating the available data, rather than implementing the tracking solution.</p>
+
+<p>During one go-live period, the dashboard recorded <strong>approximately 400 access requests in a single month</strong>.</p>
+
+<h4 id="making-demand-visible">Making Demand Visible</h4>
+
+<p>I shared the dashboard’s usage chart with our Platform Team to make demand for temporary database access visible, particularly during periods of increased production activity.</p>
+
+<h4 id="understanding-the-limits-of-usage-data">Understanding the Limits of Usage Data</h4>
+
+<p>The approximately 400 monthly requests demonstrated substantial demand, but they didn’t establish how much time the self-service capability saved or how satisfied developers were with it.</p>
+
+<p>The number also couldn’t be interpreted as 400 avoided support tickets, since we hadn’t established a direct comparison with the previous manual process.</p>
+
+<h3 id="3-developer-feedback">3. Developer Feedback</h3>
+
+<h4 id="investigating-the-user-experience">Investigating the User Experience</h4>
+
+<p>While the usage dashboard showed demand for temporary production database access, it didn’t tell us how developers experienced the feature or whether it met their needs.</p>
+
+<p>After the capability was fully released, I identified frequent users and interviewed them about ease of use, documentation, potential improvements and unresolved issues. I also invited wider feedback through our project Slack channel.</p>
+
+<h4 id="evaluating-feedback-and-feature-requests">Evaluating Feedback and Feature Requests</h4>
+
+<p>The feedback was generally positive. Users found the capability straightforward to use and the documentation helpful.</p>
+
+<p>However, one PO wanted to use the feature for analytical JOIN queries across different databases, beyond its intended purpose of troubleshooting production issues.</p>
+
+<p>We explored the request but found limited evidence of similar needs among other users, so we decided not to expand the feature’s scope at that point.</p>
+
+<h4 id="informing-product-scope-decisions">Informing Product Scope Decisions</h4>
+
+<p>I shared the findings with our PO and team, helping us better understand the experience behind the usage metrics.</p>
+
+<p>This reinforced an important lesson about product thinking: <strong>a user request deserves investigation, but not every request justifies expanding a product’s scope.</strong></p>
+
+<p>The interviews provided useful qualitative insights, but they weren’t a representative satisfaction survey or a quantified measure of developer experience.</p>
+
+<h2 id="other-signs-of-platform-success">Other Signs of Platform Success</h2>
+
+<p>Platform success isn’t only about feature adoption or developer satisfaction. Reliable services and clear onboarding also contribute to a positive developer experience.</p>
+
+<h3 id="maintaining-service-reliability-during-migration">Maintaining Service Reliability During Migration</h3>
+
+<p>Our Platform Team completed a cluster migration with <strong>no observed downtime</strong>.</p>
+
+<p>To reduce operational risks, the team tested the migration approach in advance, migrated non-production environments before production, and used monitoring dashboards and automated functional tests.</p>
+
+<p>We also gathered information about application dependencies and collaborated with QAs, Tech Leads, Architects and other relevant colleagues to support a coordinated migration.</p>
+
+<p>This was a collective team achievement, rather than a reliability metric I personally introduced. Nevertheless, it illustrated another important dimension of platform success: enabling technical changes while maintaining service availability.</p>
+
+<h3 id="clarifying-responsibilities-through-onboarding">Clarifying Responsibilities Through Onboarding</h3>
+
+<p>I also adapted onboarding information for POs working in stream-aligned teams.</p>
+
+<p>The material explained what our Platform Team was responsible for, how stream-aligned teams could interact with us and where they could find guidance or request support.</p>
+
+<p>The feedback I received was positive, although I didn’t formally measure onboarding effectiveness.</p>
+
+<h2 id="exploring-better-measures">Exploring Better Measures</h2>
+
+<p>Beyond the metrics I was already working with, I considered additional ways to evaluate platform success. These ideas were not implemented as a comprehensive measurement framework, but they helped me think more critically about what we could measure and what the results might tell us.</p>
+
+<h3 id="evaluating-support-trends-after-changes">Evaluating Support Trends After Changes</h3>
+
+<p>I considered two approaches to better understand support trends:</p>
+
+<ul>
+  <li><strong>After feature releases:</strong> Compare release dates with the volume and categories of subsequent support tickets to identify unexpected issues or areas requiring better guidance.</li>
+  <li><strong>After documentation updates and technical huddles:</strong> Compare recurring support questions before and after improvements to FAQs, documentation or knowledge-sharing sessions.</li>
+</ul>
+
+<p>However, fewer tickets wouldn’t automatically indicate a better experience. Teams might be unaware of a feature, find workarounds or stop reporting problems.</p>
+
+<p>Any analysis would also need to consider changes in platform usage, the number of active teams and other improvements happening simultaneously.</p>
+
+<h3 id="looking-beyond-individual-metrics">Looking Beyond Individual Metrics</h3>
+
+<p>I was also interested in exploring broader ways of evaluating platform success, particularly how our services influenced developer productivity, satisfaction and the ability to work independently.</p>
+
+<p>Some of the measurement areas I considered included:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Measurement area</th>
+      <th>Metrics I was interested in</th>
+      <th>What they could help us understand</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>DORA metrics</strong></td>
+      <td>Deployment frequency, lead time for changes, change failure rate and time to restore service</td>
+      <td>How reliably and efficiently we delivered platform changes.</td>
+    </tr>
+    <tr>
+      <td><strong>Developer experience</strong></td>
+      <td>Developer satisfaction, perceived productivity and friction points</td>
+      <td>Whether platform services made everyday development work easier.</td>
+    </tr>
+    <tr>
+      <td><strong>Platform adoption</strong></td>
+      <td>Active teams, capability usage and adoption rates</td>
+      <td>Whether teams were discovering and using the services available to them.</td>
+    </tr>
+    <tr>
+      <td><strong>Self-service efficiency</strong></td>
+      <td>Infrastructure provisioning time, configuration-change lead time and developer waiting time</td>
+      <td>Where manual processes or dependencies on platform support slowed teams down.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>These were areas I was interested in exploring, rather than metrics I had implemented as part of a comprehensive measurement programme.</p>
+
+<p>The article <a href="https://platformengineering.com/features/platform-team-metrics-that-actually-matter-beyond-dora/"><em>Platform Team Metrics That Actually Matter: Beyond DORA</em></a> by Neel Shah provides a useful perspective on combining delivery, adoption, developer experience and operational metrics to evaluate platform value.</p>
+
+<p>My main takeaway was that <strong>no single metric can demonstrate platform success</strong>. Usage, reliability, developer feedback and workflow efficiency need to be considered together to understand whether a platform is genuinely helping its users.</p>
+
+<h3 id="recognising-data-quality-limitations">Recognising Data Quality Limitations</h3>
+
+<p>One metric I wanted to explore was <strong>support request lead time</strong>: the elapsed time between a request being raised and resolved.</p>
+
+<p>However, support pairs didn’t consistently update Jira ticket statuses, making the timing data unreliable as a complete representation of the support process.</p>
+
+<p>I reminded colleagues to maintain ticket statuses and facilitated a support-process huddle to discuss improvements.</p>
+
+<p>This highlighted an important limitation: <strong>before introducing a metric, we need shared definitions and reliable data collection practices.</strong></p>
+
+<p>Without those foundations, even a well-designed dashboard can produce misleading conclusions.</p>
+
+<p>I did not establish a validated support lead-time baseline or measure an improvement in this metric.</p>
+
+<h2 id="outcomes--reflections">Outcomes &amp; Reflections</h2>
+
+<p>What I found most valuable was learning to connect different sources of information rather than relying on a single metric.</p>
+
+<p>Support tickets helped me recognise recurring friction. Usage data made the demand for self-service visible. Conversations with developers provided context that dashboards couldn’t capture. Together, these insights informed documentation improvements and discussions about platform priorities.</p>
+
+<p>I also became more critical of the conclusions we draw from numbers. High usage doesn’t necessarily mean high satisfaction, and fewer support requests don’t automatically mean fewer problems. Even a useful metric can be misleading if the underlying data is unreliable.</p>
+
+<p>This experience strengthened my interest in treating internal platforms as products. For me, measuring platform success isn’t simply about demonstrating how much a team delivers, but about understanding whether the services it provides genuinely help people work more effectively.</p>
+
+<p><strong>Explore the supporting project:</strong> <a href="https://github.com/Jenbn/technical-ba-platform-portfolio/tree/main/04-platform-success-metrics">Platform Success Metrics on GitHub</a></p>
+
+  </main>
+  <footer class="container footer">A learning and professional portfolio · <a href="https://github.com/Jenbn/technical-ba-platform-portfolio">View source on GitHub</a></footer>
+</body>
+</html>

@@ -6,12 +6,12 @@ permalink: /projects/flow-metrics/
 
 [← All projects]({{ '/projects/' | relative_url }})
 
-# Flow Metrics & Forecasting
+### Flow Metrics & Forecasting
 
-Actual delivery-improvement experience alongside a retrospective synthetic Monte Carlo exercise.
+**Focus:** Flow Metrics · Agile Delivery · Data-Informed Planning · Monte Carlo Forecasting
 
-## Project materials
+Using flow metrics to understand delivery patterns, identify bottlenecks and improve planning discussions. The project also explores Monte Carlo forecasting through retrospective simulations using synthetic data.
 
 [Read the case study]({{ '/case-studies/flow-metrics/' | relative_url }})
 
-[Explore the project artifacts](https://github.com/Jenbn/technical-ba-platform-portfolio/tree/main/03-flow-metrics-forecasting)
+[Explore the project on GitHub](https://github.com/Jenbn/technical-ba-platform-portfolio/tree/main/03-flow-metrics-forecasting)
