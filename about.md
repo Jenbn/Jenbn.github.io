@@ -4,31 +4,37 @@ title: About Me
 permalink: /about/
 ---
 
-# A little about me
+# A Little About Me
 
-I'm a **Technical Business Analyst with a background in Quality Analysis**, a curious mind and a passion for product thinking, developer experience and internal platforms.
+I'm a curious person who enjoys understanding how things work, asking questions and finding ways to make complex problems simpler.
 
-Before moving into technology, I worked in tourism and customer-facing roles, where I developed a strong appreciation for communication, collaboration and understanding different perspectives.
+Professionally, I'm a **Technical Business Analyst with a background in Quality Analysis**, and a particular interest in product thinking, developer experience and internal platforms.
 
-At Thoughtworks, I worked in international, cross-functional software teams, first in Quality Analysis and later as a Technical BA in a platform team supporting a large automotive organisation.
+Before moving into technology, I worked in tourism and customer-facing roles, where I developed an appreciation for communication, collaboration and understanding different perspectives.
 
-## What drives me
+At Thoughtworks, I worked in international, cross-functional software teams, first as a QA and later as a Technical BA in a platform team supporting a large automotive organisation.
 
-I enjoy understanding complex problems, asking questions and helping people find common ground.
+## What Drives Me
 
-I'm particularly passionate about **Platform as a Product**. Developers are users too, and I believe the tools and platforms they rely on deserve just as much attention to usability and user experience as customer-facing products.
+I enjoy bringing people together, challenging assumptions and helping teams understand not just *what* they're building, but *why*.
 
-My QA background has given me a strong appreciation for quality, security and accessibility, while my BA experience has strengthened my interest in discovery, facilitation and data-informed decisions.
+I'm particularly passionate about **Platform as a Product**. Developers are users too, and I believe the tools and platforms they rely on deserve the same attention to usability and user experience as customer-facing products.
 
-I'm currently developing further towards **Technical Product Ownership**, combining technical understanding with a product mindset and a focus on delivering meaningful value.
+My QA background shaped how I approach quality, security and digital accessibility—an area I've continued exploring through my CPACC certification.My BA experience has strengthened my interest in user research, workshop facilitation, product discovery and data-informed decisions.
 
-## Beyond work
+I'm continuing to develop towards **Technical Product Ownership**, combining technical understanding with a product mindset and a focus on delivering meaningful value.
 
-Outside technology, I enjoy cooking, travelling, discovering different cultures and learning new things. Curiosity is something I bring to both my professional and personal life.
+## Beyond Work
 
-## Let's connect!
+When I'm not thinking about technology, you'll probably find me cooking, travelling, discovering different cultures or learning something completely new.
 
-If you'd like to exchange ideas or simply get in touch — I'd love to hear from you!
+One of my current adventures is sailing! I'm working towards my RYA Day Skipper certification and looking forward to developing my sailing skills, gaining more experience on the water and exploring new places along the way.
+
+I started this website to share my professional experiences, experiments and things I'm curious about. Not everything here has to be about technology or Business Analysis!
+
+## Let's Connect!
+
+If you'd like to exchange ideas, discuss something you've read here or simply say hello, I'd love to hear from you.
 
 [Connect with me on LinkedIn](https://www.linkedin.com/in/jenifer-deniz-rodriguez/){:target="_blank" rel="noopener noreferrer"}
 
