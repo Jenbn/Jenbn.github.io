@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Exploring product thinking, developer experience and data-informed decisions through real-world platform challenges.">
+  <title>From Flow Metrics to Better Planning · From Complexity to Clarity</title>
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="/">Technical BA <span>/ Product Portfolio</span></a>
+      <nav aria-label="Main navigation">
+        <a href="/">Home</a>
+        <a href="/projects/">Projects</a>
+        <a href="/about/">About Me</a>
+        <a href="https://github.com/Jenbn/technical-ba-platform-portfolio">GitHub</a>
+      </nav>
+    </div>
+  </header>
+  <main class="container page-content">
+    <h1 id="from-flow-metrics-to-better-planning">From Flow Metrics to Better Planning</h1>
+
+<p><em>Technical Business Analysis · Platform Teams · Delivery Predictability · Retrospective Forecasting</em></p>
+
+<h2 id="about-this-case-study">About this case study</h2>
+
+<p>As a Technical Business Analyst in a platform team, I used <strong>flow and delivery metrics</strong> to question planning assumptions, identify workflow bottlenecks and support practical improvements with the Product Owner (PO), Tech Lead and team.</p>
+
+<p>This case study brings together two distinct experiences:</p>
+
+<ul>
+  <li><strong>During the project:</strong> I used historical delivery data and investigated specific work items to inform planning and improve how we worked.</li>
+  <li><strong>Afterwards:</strong> I explored <strong>Monte Carlo forecasting</strong> in Google Sheets as a retrospective learning exercise. I did not use Monte Carlo in the original project.</li>
+</ul>
+
+<h3 id="explore-the-analysis">Explore the analysis</h3>
+
+<p>The supporting workbook models a fictional team, <strong>Team Aqueduct</strong>, using synthetic data—not historical records from my employer. It contains the metric calculations, charts and forecasting simulations.</p>
+
+<ul>
+  <li><strong><a href="https://github.com/Jenbn/technical-ba-platform-portfolio/blob/main/03-flow-metrics-forecasting/data/team_aqueduct_metrics.xlsx">Download the Excel workbook</a></strong> — Data, calculations and visualisations.</li>
+  <li><strong><a href="https://github.com/Jenbn/technical-ba-platform-portfolio/blob/main/03-flow-metrics-forecasting/README.md">Read the dataset README</a></strong> — Modelling context, AI assistance and limitations.</li>
+  <li><strong><a href="https://docs.google.com/spreadsheets/d/1PH6bDGx60KW_-77tscZUf3W54xKOBAM4CkPxAl1xB3I/edit?usp=sharing">Explore the Analysis in Google Sheets</a></strong> - View the metrics, charts and Monte Carlo simulations.</li>
+</ul>
+
+<h2 id="flow-metrics-at-a-glance">Flow metrics at a glance</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Metric</th>
+      <th>What it tells us</th>
+      <th>How I used it</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Sprint delivery &amp; spillovers</strong></td>
+      <td>How planned, completed and changed scope compare; how often work carries into another sprint</td>
+      <td>Spotted a pattern of overcommitment and supported more realistic planning</td>
+    </tr>
+    <tr>
+      <td><strong>Throughput</strong></td>
+      <td>Number of work items completed in a given period, irrespective of story points</td>
+      <td>Used previous sprints and PIs as a historical reference for future planning</td>
+    </tr>
+    <tr>
+      <td><strong>Time in status</strong></td>
+      <td>Where items spend time, including waiting and handoffs</td>
+      <td>Identified queues around QA and sign-off</td>
+    </tr>
+    <tr>
+      <td><strong>Cycle time</strong></td>
+      <td>How long work takes from a defined starting status until completion</td>
+      <td>Investigated outliers and recurring external dependencies</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>The charts and detailed breakdowns are in the workbook tabs <code class="language-plaintext highlighter-rouge">Sprint_Delivery</code>, <code class="language-plaintext highlighter-rouge">Throughput</code>, <code class="language-plaintext highlighter-rouge">Time_In_Status</code>, <code class="language-plaintext highlighter-rouge">Time_Per_Work_Item</code> and <code class="language-plaintext highlighter-rouge">Cycle_Time</code>, along with their comparison tabs.</em></p>
+
+<h2 id="from-insights-to-improvements">From insights to improvements</h2>
+
+<h3 id="1-improving-sprint-planning">1. Improving sprint planning</h3>
+
+<p><strong>Metrics:</strong> Throughput + sprint delivery</p>
+
+<p><strong>The challenge.</strong> We were regularly carrying approximately <strong>five items into the next sprint</strong>. Story points were expected in the project and had become a major reference for forecasting, even though estimates couldn’t capture all the time spent waiting for reviews, feedback or other teams.</p>
+
+<p><strong>What I did.</strong> I built eazyBI views of throughput and sprint delivery across previous Program Increments (PIs), shared the historical completion patterns with our PO and used them as an additional reference in planning conversations. Inspired by the book, <a href="https://leanpub.com/whenwillitbedone"><em>When Will It Be Done?</em> by Daniel S. Vacanti</a>, I also facilitated knowledge sharing about the limits of story-point forecasting. I didn’t suggest removing story points: with the Tech Lead, I helped define a <strong>Fibonacci reference table</strong>, including explanations and example stories, so points could remain useful for discussing relative complexity and uncertainty.</p>
+
+<p><strong>What changed.</strong> As we began using historical delivery alongside our other planning inputs, spillovers <strong>fell from approximately five to two per sprint</strong>. This was an observed team outcome, not proof that one specific intervention caused the reduction.</p>
+
+<h3 id="2-reducing-waiting-time">2. Reducing waiting time</h3>
+
+<p><strong>Metric:</strong> Time in status</p>
+
+<p><strong>The challenge.</strong> Work items spent substantial time waiting for <strong>QA desk-checks and sign-off</strong>.</p>
+
+<p><strong>What I did.</strong> I brought the bottlenecks to the PO, Tech Lead and team. The team proposed dedicated desk-check and sign-off slots <strong>twice a week</strong>, and I suggested a <strong>first-in, first-out (FIFO)</strong> default for these queues, while allowing legitimate urgent exceptions. I also encouraged colleagues to update Jira statuses accurately so our workflow data reflected what was really happening.</p>
+
+<p><strong>What changed.</strong> We introduced clearer review practices and a more transparent approach to queues. I didn’t separately quantify the resulting reduction in waiting time, so I wouldn’t claim a measured improvement in this metric.</p>
+
+<h3 id="3-shortening-feedback-loops">3. Shortening feedback loops</h3>
+
+<p><strong>Metric:</strong> Cycle time</p>
+
+<p><strong>The challenge.</strong> The PO and I found work items with unusually long cycle times. A recurring pattern involved changes that needed validation by <strong>stream-aligned teams</strong>, such as a Java 11-to-17 transition across testing and production environments.</p>
+
+<p><strong>What I did.</strong> We discussed specific outliers with the team and decided to split testing-environment and production-environment changes into <strong>separate work items</strong>. We allowed a short feedback window—typically <strong>one or two working days</strong>—then directed later issues through support tickets rather than keeping the original story open indefinitely. We also worked on smaller, valuable stories and spikes with a time-box scope.</p>
+
+<p><strong>What changed.</strong> Work and external dependencies became easier to track, with shorter feedback loops as a guiding principle. The feedback window was a workflow agreement, <strong>not</strong> evidence that a production change was risk-free after two days.</p>
+
+<h2 id="monte-carlo-forecasting--retrospective-exercise">Monte Carlo forecasting — retrospective exercise</h2>
+
+<p>I had already worked with throughput and percentiles during the project, but <strong>I hadn’t implemented Monte Carlo forecasting</strong>. I built the following examples later to learn how a BA or PO could communicate delivery uncertainty rather than presenting a single estimate as a promise.</p>
+
+<h3 id="how-it-works-and-what-data-it-needs">How it works and what data it needs</h3>
+
+<p>Monte Carlo forecasting repeatedly samples <strong>historical throughput</strong> to simulate a range of future delivery outcomes. It helps answer two different planning questions:</p>
+
+<ul>
+  <li><strong>How Many?</strong> How much work could be completed within a fixed timebox?</li>
+  <li><strong>When?</strong> How many sprints might be needed to finish a fixed backlog?</li>
+</ul>
+
+<p>My synthetic workbook contains <strong>four PIs of six two-week sprints</strong>. Sprints <strong>1–5</strong> represent normal development; Sprint <strong>6</strong> includes one week of carryover work and one innovation week. To reflect that difference, I sampled from two pools: <strong>20 regular sprints</strong> and <strong>four Sprint 6 observations</strong>, across <strong>1,000 simulations</strong>.</p>
+
+<h3 id="how-many--one-pi">How Many? — One PI</h3>
+
+<p><strong>Question:</strong> How many items could be completed in one six-sprint PI?</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Estimated chance of delivering <em>at least</em></th>
+      <th style="text-align: right">Completed items</th>
+      <th style="text-align: right">Share in saved simulation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>50%</td>
+      <td style="text-align: right">54</td>
+      <td style="text-align: right">51.4%</td>
+    </tr>
+    <tr>
+      <td>70%</td>
+      <td style="text-align: right">52</td>
+      <td style="text-align: right">72.1%</td>
+    </tr>
+    <tr>
+      <td>85%</td>
+      <td style="text-align: right">50</td>
+      <td style="text-align: right">87.5%</td>
+    </tr>
+    <tr>
+      <td>95%</td>
+      <td style="text-align: right">47</td>
+      <td style="text-align: right">96.3%</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>How I interpret it:</strong> In the saved simulation, delivering at least <strong>50 items</strong> occurred in <strong>87.5%</strong> of runs, whereas delivering at least <strong>54</strong> occurred in <strong>51.4%</strong>. This gives a PO different scope options to discuss, each with a different level of uncertainty.</p>
+
+<p><strong>Visualisation:</strong> Open the workbook’s <code class="language-plaintext highlighter-rouge">Monte_Carlo_Snapshot</code> (fixed results) and <code class="language-plaintext highlighter-rouge">Monte_Carlo_How_Many</code> (live histogram and calculations).</p>
+
+<p><img src="/assets/images/monte-carlo/how-many.png" alt="Monte Carlo How Many forecast: distribution of completed work items" class="chart-image" /></p>
+<p class="figure-caption">
+    Figure 1 — Distribution of completed work items across 1,000 simulated PIs, using synthetic historical throughput.
+</p>
+
+<h3 id="when--a-backlog-of-60-items">When? — A backlog of 60 items</h3>
+
+<p><strong>Question:</strong> How many sprints might be needed to complete <strong>60 items</strong>?</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Completion by the end of</th>
+      <th style="text-align: right">Share of simulated runs</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Sprint 5</td>
+      <td style="text-align: right">0.6%</td>
+    </tr>
+    <tr>
+      <td>Sprint 6 — one PI</td>
+      <td style="text-align: right">2.9%</td>
+    </tr>
+    <tr>
+      <td>Sprint 7</td>
+      <td style="text-align: right">85.1%</td>
+    </tr>
+    <tr>
+      <td>Sprint 8</td>
+      <td style="text-align: right">99.9%</td>
+    </tr>
+    <tr>
+      <td>Sprint 9</td>
+      <td style="text-align: right">100%</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>How I interpret it:</strong> Finishing all 60 items within one PI was unlikely under this model. <strong>Seven sprints</strong> offered about an <strong>85% simulated chance</strong>, while <strong>eight</strong> provided more contingency. The 100% shown at Sprint 9 describes these sampled outcomes—it is <strong>not a guarantee</strong> for a real project.</p>
+
+<p><strong>Visualisation:</strong> See <code class="language-plaintext highlighter-rouge">Monte_Carlo_When</code> for the cumulative completion-probability chart and sprint-by-sprint calculations.</p>
+
+<p><img src="/assets/images/monte-carlo/when.png" alt="Monte Carlo When forecast: probability of completing the backlog by sprint" class="chart-image" /></p>
+<p class="figure-caption">
+    Figure 2 — Estimated number of sprints required to complete a backlog of 60 work items, showing the cumulative probability of completion based on 1,000 Monte Carlo simulations.
+</p>
+
+<h3 id="how-id-apply-this-in-planning">How I’d apply this in planning</h3>
+
+<p>I would use these forecasts as <strong>conversation starters</strong> in PI planning and roadmap discussions: compare a few scope and date options, make their assumptions explicit, and revisit the forecast as team capacity, work mix and dependencies change. I’d also compare forecasts against actual outcomes over time.</p>
+
+<p>These results use a <strong>small synthetic history</strong>, particularly for Sprint 6. They assume broadly comparable future conditions and don’t explicitly model new scope, dependencies or related delays. The <em>How Many?</em> figures above come from a saved snapshot; the live simulations can change when recalculated. <strong>These are demonstrations of the method, not validated predictions for my former team.</strong></p>
+
+<h2 id="key-takeaways">Key takeaways</h2>
+
+<p>For me, the value of metrics isn’t the chart itself. It’s being able to <strong>ask better questions, make bottlenecks visible and bring evidence into conversations</strong> with the PO, Tech Lead and team.</p>
+
+<p>The retrospective Monte Carlo exercise extended that learning: instead of treating a forecast as a single number, I learned to communicate <strong>different possible outcomes, their estimated likelihoods and the assumptions behind them</strong>.</p>
+
+  </main>
+  <footer class="container footer">A learning and professional portfolio · <a href="https://github.com/Jenbn/technical-ba-platform-portfolio">View source on GitHub</a></footer>
+</body>
+</html>

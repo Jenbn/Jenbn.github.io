@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Exploring product thinking, developer experience and data-informed decisions through real-world platform challenges.">
+  <title>Vault to AWS Secrets Manager — Case Study · From Complexity to Clarity</title>
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="/">Technical BA <span>/ Product Portfolio</span></a>
+      <nav aria-label="Main navigation">
+        <a href="/">Home</a>
+        <a href="/projects/">Projects</a>
+        <a href="/about/">About Me</a>
+        <a href="https://github.com/Jenbn/technical-ba-platform-portfolio">GitHub</a>
+      </nav>
+    </div>
+  </header>
+  <main class="container page-content">
+    <h1 id="understanding-users-before-migrating-secrets">Understanding Users Before Migrating Secrets</h1>
+
+<p><em>Technical Business Analysis · User Research · Platform Teams</em></p>
+
+<h2 id="about-this-case-study">About this case study</h2>
+
+<p>Migrating from HashiCorp Vault to AWS Secrets Manager (AWS SM) wasn’t just a technical change. It also required understanding how different users interacted with the service, what challenges they faced and which existing workflows needed to be preserved or improved.</p>
+
+<p>As a Business Analyst (BA) in the Platform Team responsible for the migration, I contributed to discovery, user research and release planning. This case study explores how we brought user needs into a technically driven initiative and translated research findings into an agreed Minimum Viable Product (MVP) strategy.</p>
+
+<p>The supporting materials include reconstructed examples and retrospective proposals. Confidential information has been anonymised or omitted, and the proposed success metrics are not presented as measured project outcomes.</p>
+
+<h2 id="context--challenge">Context &amp; Challenge</h2>
+
+<p>My internal platform team was responsible for maintaining the HashiCorp Vault implementation and managing access to it across a large software programme. This included onboarding and offboarding project members, maintaining access and denial policies, applying software updates, and overseeing the security of the service. Development teams remained responsible for managing their own secrets.</p>
+
+<p>Although the wider project already relied heavily on AWS services, secrets management was still supported by a heavily customised Vault implementation.</p>
+
+<p>Over time, this implementation had become increasingly difficult to maintain:</p>
+
+<ul>
+  <li><strong>Operational risk:</strong> Vault represented a single point of failure within the platform.</li>
+  <li><strong>Legacy complexity:</strong> The solution had been developed more than five years ago and contained considerable legacy code. The current team also had limited familiarity with its customisation.</li>
+  <li><strong>Manual processes:</strong> Common activities, such as onboarding users and updating access policies, required multiple manual steps.</li>
+  <li><strong>Maintenance costs:</strong> Maintaining or refactoring the existing implementation was considered more expensive than migrating to AWS SM.</li>
+</ul>
+
+<p>Moving to AWS SM offered an opportunity to reduce these challenges and align secrets management with the wider AWS environment.</p>
+
+<p>However, replacing the technology was only part of the challenge. Different user groups interacted with Vault in different ways, and the team needed to understand their workflows, permissions and pain points before defining requirements for the new solution.</p>
+
+<p><strong>The key question was: How could we make the migration technically beneficial while ensuring the new solution supported the people using it?</strong></p>
+
+<h2 id="my-role--approach">My Role &amp; Approach</h2>
+
+<p>As a BA, my focus was on understanding how different user groups interacted with Vault and identifying their needs before defining requirements for the migration.</p>
+
+<p>I collaborated with a Platform Owner, UX designers and other members of my platform team throughout the discovery and planning activities. My main contributions included:</p>
+
+<ul>
+  <li><strong>Stakeholder identification:</strong> Worked in a pair with a Platform Owner to identify seven stakeholder groups, including both consumers of the service and our own platform team.</li>
+  <li><strong>User interviews:</strong> Collaborated with the Platform Owner to prepare interview questions and facilitated interviews with representatives from the different stakeholder groups. UX designers supported the sessions by documenting participants’ responses.</li>
+  <li><strong>Research synthesis:</strong> Worked with UX designers to review, categorise and present interview findings to our platform team, highlighting common challenges and differences between user groups.</li>
+  <li><strong>Story mapping:</strong> Prepared and facilitated a Mural workshop with our platform team, connecting user workflows, pain points and expectations to potential work items and release planning.</li>
+</ul>
+
+<p>The goal was to develop a shared understanding of user needs and use those insights to inform migration scope, priorities and backlog decisions.</p>
+
+<h2 id="discovery">Discovery</h2>
+
+<p>Our research involved <strong>12 individual interviews</strong> across six stream-aligned stakeholder groups, each lasting approximately 30–45 minutes, plus <strong>one group interview with our Platform Team</strong>. This helped us understand how users consumed the service and how our team administered and maintained it.</p>
+
+<h3 id="different-users-different-needs">Different Users, Different Needs</h3>
+
+<p>The research revealed distinct usage patterns across the seven stakeholder groups:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>User groups</th>
+      <th>Typical interaction with Vault</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Developers, Tech Leads and Architects</td>
+      <td>Primarily used the CLI to create, update and retrieve secrets for development and integration workflows.</td>
+    </tr>
+    <tr>
+      <td>Project Managers, Product Owners and Quality Analysts</td>
+      <td>Primarily used the UI for role-specific workflows, including accessing test credentials, reading secrets and, for some roles, maintaining shared test-user credentials.</td>
+    </tr>
+    <tr>
+      <td>Platform Team</td>
+      <td>Administered Vault, managed user onboarding and offboarding, maintained user-synchronisation workflows, updated access and denial policies, and supported the service’s operation and security.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>These differences highlighted the importance of considering both user-facing workflows and platform administration when planning the migration.</p>
+
+<h3 id="key-research-findings">Key Research Findings</h3>
+
+<p>The research revealed recurring challenges, differences in user workflows and aspects of Vault that users wanted to preserve.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Research theme</th>
+      <th>What we learned</th>
+      <th>Implication for migration planning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Discoverability</strong></td>
+      <td>Users often needed to know the exact path to find a secret.</td>
+      <td>Consider how users could locate authorised secrets without memorising paths.</td>
+    </tr>
+    <tr>
+      <td><strong>Ownership and duplication</strong></td>
+      <td>Shared credentials were sometimes duplicated, causing inconsistent values and errors. Ownership wasn’t always clear.</td>
+      <td>Explore clearer ownership, naming conventions and management practices.</td>
+    </tr>
+    <tr>
+      <td><strong>Permissions and administration</strong></td>
+      <td>Some users were unaware of their existing permissions. Our Platform Team also relied on cumbersome custom processes for membership and policy management.</td>
+      <td>Improve permission awareness and investigate simpler administrative workflows.</td>
+    </tr>
+    <tr>
+      <td><strong>Developer workflows and integrations</strong></td>
+      <td>CLI users valued their existing workflows. Developers, Tech Leads and Architects also wanted better CI/CD integration.</td>
+      <td>Preserve important technical workflows and investigate integration requirements.</td>
+    </tr>
+    <tr>
+      <td><strong>Authentication and migration safety</strong></td>
+      <td>Many users wanted access without requiring a VPN. Concerns were also raised about migration errors and the need for a controlled transition.</td>
+      <td>Evaluate secure access options and plan a gradual migration with appropriate validation.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>An important finding was that users generally found Vault straightforward once they had the necessary access and understood how to use it. The migration therefore needed to preserve useful existing experiences, not simply introduce new functionality.</p>
+
+<p>These findings represented users’ experiences with our implementation, rather than limitations inherent to HashiCorp Vault. They informed subsequent technical discussions and user story mapping, but did not automatically become approved implementation requirements.</p>
+
+<h2 id="turning-research-into-requirements">Turning Research Into Requirements</h2>
+
+<p>Following the discovery activities, I prepared and facilitated a story-mapping workshop in Mural to help our Platform Team translate research findings into actionable work and define an initial migration strategy.</p>
+
+<h3 id="from-user-needs-to-a-shared-user-story-map">From User Needs to a Shared User Story Map</h3>
+
+<p>Before the workshop, I prepared the stakeholder groups, high-level activities and narrative flow, incorporating insights from our discovery.</p>
+
+<p>During the Mural workshop, our Platform Team reviewed these activities, identified missing steps and broke the workflows into more specific tasks and capabilities.</p>
+
+<p>This gave us a shared view of the migration scope, covering user-facing needs, operational responsibilities and technical considerations.</p>
+
+<h3 id="defining-the-mvp-and-release-strategy">Defining the MVP and Release Strategy</h3>
+
+<p>Together with the Tech Lead, Product Owner and Platform Owners, we agreed on an initial two-release approach, which we subsequently presented to the wider team for feedback.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Release</th>
+      <th>Focus</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Release 1 — MVP</strong></td>
+      <td>Enable core AWS SM workflows and onboard the Platform Team and two pilot stream-aligned teams with different technology stacks. Use dummy secrets to validate permissions, workflows and integration before wider adoption.</td>
+    </tr>
+    <tr>
+      <td><strong>Release 2</strong></td>
+      <td>Extend automation, support broader migration across teams and work towards retiring Vault.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The objective was to validate the essential workflows with a small group of users before expanding the migration.</p>
+
+<p>The story map gave us a shared reference for discussing work items, dependencies and release priorities. Technical investigation tasks were tracked separately as spikes.</p>
+
+<h3 id="planning-the-new-operating-model">Planning the New Operating Model</h3>
+
+<p>Alongside release planning, we considered how AWS SM could simplify existing workflows and reduce manual administration.</p>
+
+<p>The intended approach separated the management of secret structures from the management of their values:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Actor</th>
+      <th>Intended responsibility</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>CI/CD workflows</strong></td>
+      <td>Create and delete secret structures through predefined automation.</td>
+    </tr>
+    <tr>
+      <td><strong>Authorised users</strong></td>
+      <td>Add, read and update secret values through the AWS Management Console.</td>
+    </tr>
+    <tr>
+      <td><strong>Applications and services</strong></td>
+      <td>Retrieve authorised secrets during execution.</td>
+    </tr>
+    <tr>
+      <td><strong>Platform Team</strong></td>
+      <td>Maintain shared capabilities, access patterns and supporting workflows.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>This approach aimed to standardise secret provisioning, clarify responsibilities and reduce the risk of exposing sensitive values through CI/CD pipelines.</p>
+
+<p>It also connected several findings from our research, particularly around permissions, ownership, developer workflows and the need to reduce manual operational tasks.</p>
+
+<p><em>The story map and release slices presented in this portfolio are reconstructed and anonymised. They reflect the planning approach, not a claim that every mapped capability was implemented or delivered exactly as planned.</em></p>
+
+<h3 id="supporting-artifacts">Supporting Artifacts</h3>
+
+<p>The following reconstructed artifacts provide more detail about how we translated discovery into migration planning:</p>
+
+<ul>
+  <li><a href="https://github.com/Jenbn/technical-ba-platform-portfolio/tree/main/02-vault-to-aws-sm-migration/story-map">User Story Map</a> — Workshop approach, agreed release slices and technical investigations.</li>
+  <li><a href="https://github.com/Jenbn/technical-ba-platform-portfolio/tree/main/02-vault-to-aws-sm-migration/work-items">Work Item Examples</a> — Examples of a user story, technical spike, support ticket and bug, including requirements and acceptance criteria.</li>
+</ul>
+
+<p><em>These artifacts are reconstructed and anonymised for portfolio purposes and should not be interpreted as verbatim project records or evidence of completed implementation.</em></p>
+
+<h2 id="outcomes--reflections">Outcomes &amp; Reflections</h2>
+
+<h3 id="what-we-achieved">What We Achieved</h3>
+
+<p>Our discovery and planning work gave the Platform Team a more informed foundation for the migration.</p>
+
+<p>Instead of relying solely on technical assumptions, we could consider real user workflows, operational challenges and integration needs when discussing requirements and priorities.</p>
+
+<p>The story-mapping workshop provided a shared reference for migration planning, resulting in an agreed initial MVP and release strategy. We also discussed ways to assess adoption, workflow reliability and readiness to retire Vault.</p>
+
+<p>These were discovery and planning outcomes. I left the project before adoption began, so I cannot confirm which capabilities or metrics were eventually implemented or how successful the migration was.</p>
+
+<h3 id="measuring-success-beyond-delivery">Measuring Success Beyond Delivery</h3>
+
+<p>Reflecting on the project, I explored additional ways to evaluate whether the migration improved the experience of the people using and maintaining the service.</p>
+
+<p>My retrospective proposals included monitoring support requests, identifying documentation gaps and collecting developer feedback during and after migration.</p>
+
+<p>Together with adoption and operational metrics, these could help answer a broader question: <strong>Did the migration make secrets management easier, more reliable and more understandable for its users?</strong></p>
+
+<h3 id="key-takeaways">Key Takeaways</h3>
+
+<p>This experience reinforced three lessons for me:</p>
+
+<ul>
+  <li><strong>Understand users before defining solutions.</strong> Even technically motivated migrations can significantly affect people’s daily workflows.</li>
+  <li><strong>Make decisions collaboratively.</strong> Combining user research with technical expertise helps connect needs, constraints and release priorities.</li>
+  <li><strong>Think beyond implementation.</strong> Migration success should also consider adoption, usability and operational impact.</li>
+</ul>
+
+<p>For me, this project demonstrated the value of product thinking within an internal platform team: recognising developers and other internal stakeholders as users whose needs deserve attention.</p>
+
+<p><strong>Explore further:</strong> <a href="https://github.com/Jenbn/technical-ba-platform-portfolio/tree/main/02-vault-to-aws-sm-migration/migration-evaluation">Migration Evaluation &amp; Success Metrics</a></p>
+
+  </main>
+  <footer class="container footer">A learning and professional portfolio · <a href="https://github.com/Jenbn/technical-ba-platform-portfolio">View source on GitHub</a></footer>
+</body>
+</html>

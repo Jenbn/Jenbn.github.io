@@ -8,13 +8,8 @@ permalink: /projects/vault-to-aws-sm/
 
 # Vault → AWS Secrets Manager Migration
 
-Discovery interviews, story mapping and practical BA artefacts from a migration-planning case study.
+User research and migration planning for an internal secrets-management platform. Conducted stakeholder interviews, synthesised findings and facilitated story mapping to help define an MVP and release strategy.
 
-## Project materials
+[Read the case study]({{ '/case-studies/vault-migration/' | relative_url }})
 
-- [Read the project overview](https://github.com/Jenbn/technical-ba-platform-portfolio/blob/main/02-vault-to-aws-sm-migration/README.md)
-- [Explore research findings](https://github.com/Jenbn/technical-ba-platform-portfolio/blob/main/02-vault-to-aws-sm-migration/discovery/research-findings.md)
-- [Explore the story map](https://github.com/Jenbn/technical-ba-platform-portfolio/blob/main/02-vault-to-aws-sm-migration/story-map/README.md)
-- [Explore sample work items](https://github.com/Jenbn/technical-ba-platform-portfolio/blob/main/02-vault-to-aws-sm-migration/work-items/README.md)
-
-These source documents are retained in the original repository. In the next learning step, we can convert them to Jekyll content pages using layouts and front matter.
+[Explore the project artifacts](https://github.com/Jenbn/technical-ba-platform-portfolio/tree/main/02-vault-to-aws-sm-migration)

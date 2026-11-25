@@ -12,5 +12,6 @@ Actual delivery-improvement experience alongside a retrospective synthetic Monte
 
 ## Project materials
 
-- [Read the case study]({{ '/case-studies/flow-metrics/' | relative_url }})
-- [Explore the workbook and methodology](https://github.com/Jenbn/technical-ba-platform-portfolio/blob/main/03-flow-metrics-forecasting/README.md)
+[Read the case study]({{ '/case-studies/flow-metrics/' | relative_url }})
+
+[Explore the project artifacts](https://github.com/Jenbn/technical-ba-platform-portfolio/tree/main/03-flow-metrics-forecasting)
