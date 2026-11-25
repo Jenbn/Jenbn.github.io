@@ -30,7 +30,7 @@ Outside technology, I enjoy cooking, travelling, discovering different cultures 
 
 If you'd like to exchange ideas or simply get in touch — I'd love to hear from you!
 
-[Connect with me on LinkedIn](www.linkedin.com/in/jenifer-deniz-rodriguez)
+[Connect with me on LinkedIn](https://www.linkedin.com/in/jenifer-deniz-rodriguez/){:target="_blank" rel="noopener noreferrer"}
 
 ---
 
