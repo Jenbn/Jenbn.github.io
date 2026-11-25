@@ -23,7 +23,7 @@ The supporting workbook models a fictional team, **Team Aqueduct**, using synthe
 
 - **[Download the Excel workbook](https://github.com/Jenbn/technical-ba-platform-portfolio/blob/main/03-flow-metrics-forecasting/data/team_aqueduct_metrics.xlsx)** — Data, calculations and visualisations.
 - **[Read the dataset README](https://github.com/Jenbn/technical-ba-platform-portfolio/blob/main/03-flow-metrics-forecasting/README.md)** — Modelling context, AI assistance and limitations.
-- **[Explore the Analysis in Google Sheets](https://docs.google.com/spreadsheets/d/1PH6bDGx60KW_-77tscZUf3W54xKOBAM4CkPxAl1xB3I/edit?usp=sharing)** - View the metrics, charts and Monte Carlo simulations. 
+- **[Explore the Analysis in Google Sheets](https://docs.google.com/spreadsheets/d/1PH6bDGx60KW_-77tscZUf3W54xKOBAM4CkPxAl1xB3I/edit?usp=sharing)** - View the metrics, charts and Monte Carlo simulations.
 
 ## Flow metrics at a glance
 
@@ -96,8 +96,10 @@ My synthetic workbook contains **four PIs of six two-week sprints**. Sprints **1
 
 **Visualisation:** Open the workbook's `Monte_Carlo_Snapshot` (fixed results) and `Monte_Carlo_How_Many` (live histogram and calculations).
 
-![Monte Carlo How Many forecast: distribution of completed work items]({{ '/assets/images/monte-carlo/how-many.png' | relative_url }}){: style="max-width: 800px; width: 100%; height: auto;" }
-*Figure 1 — Distribution of completed work items across 1,000 simulated PIs, using synthetic historical throughput.*
+![Monte Carlo How Many forecast: distribution of completed work items]({{ '/assets/images/monte-carlo/how-many.png' | relative_url {: .chart-image }
+<p class="figure-caption">
+    Figure 1 — Distribution of completed work items across 1,000 simulated PIs, using synthetic historical throughput.
+</p>
 
 ### When? — A backlog of 60 items
 
@@ -115,8 +117,10 @@ My synthetic workbook contains **four PIs of six two-week sprints**. Sprints **1
 
 **Visualisation:** See `Monte_Carlo_When` for the cumulative completion-probability chart and sprint-by-sprint calculations.
 
-![Monte Carlo When forecast: probability of completing the backlog by sprint]({{ '/assets/images/monte-carlo/when.png' | relative_url }}){: style="max-width: 800px; width: 100%; height: auto;" }
-*Figure 2 — Estimated number of sprints required to complete a backlog of 60 work items, showing the cumulative probability of completion based on 1,000 Monte Carlo simulations.*
+![Monte Carlo When forecast: probability of completing the backlog by sprint]({{ '/assets/images/monte-carlo/when.png' | relative_url }}){: .chart-image }
+<p class="figure-caption">
+    Figure 2 — Estimated number of sprints required to complete a backlog of 60 work items, showing the cumulative probability of completion based on 1,000 Monte Carlo simulations.
+</p>
 
 ### How I'd apply this in planning
 
