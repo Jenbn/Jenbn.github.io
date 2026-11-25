@@ -96,7 +96,7 @@ My synthetic workbook contains **four PIs of six two-week sprints**. Sprints **1
 
 **Visualisation:** Open the workbook's `Monte_Carlo_Snapshot` (fixed results) and `Monte_Carlo_How_Many` (live histogram and calculations).
 
-![Monte Carlo How Many forecast: distribution of completed work items]({{ '/assets/images/monte-carlo/how-many.png' | relative_url}}) {: .chart-image }
+![Monte Carlo How Many forecast: distribution of completed work items]({{ '/assets/images/monte-carlo/how-many.png' | relative_url}}){: .chart-image }
 <p class="figure-caption">
     Figure 1 — Distribution of completed work items across 1,000 simulated PIs, using synthetic historical throughput.
 </p>
