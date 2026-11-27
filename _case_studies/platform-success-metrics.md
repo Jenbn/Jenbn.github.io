@@ -1,8 +1,11 @@
 ---
 layout: default
-title: "Platform Success Metrics — Case Study"
+title: "Measuring What Matters in Platform Teams"
+summary: "Exploring platform success through support patterns, self-service usage and developer feedback."
 permalink: /case-studies/platform-success-metrics/
+order: 3
 ---
+
 
 # Measuring What Matters in Platform Teams
 

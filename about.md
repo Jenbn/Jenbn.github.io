@@ -40,4 +40,4 @@ If you'd like to exchange ideas, discuss something you've read here or simply sa
 
 ---
 
-[Explore my projects]({{ '/projects/' | relative_url }})
+[Explore my case studies]({{ '/case-studies/' | relative_url }})

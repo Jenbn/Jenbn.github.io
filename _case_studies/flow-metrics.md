@@ -1,8 +1,11 @@
 ---
 layout: default
-title: "From Flow Metrics to Better Planning"
+title: "Flow Metrics & Forecasting"
+summary: "Using delivery metrics to understand bottlenecks, improve planning conversations and explore Monte Carlo forecasting with synthetic data."
 permalink: /case-studies/flow-metrics/
+order: 2
 ---
+
 
 # From Flow Metrics to Better Planning
 

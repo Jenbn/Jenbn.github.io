@@ -3,31 +3,62 @@ layout: default
 title: Home
 ---
 
-<p class="eyebrow">Technical Business Analyst · Product Owner</p>
+<p class="eyebrow">Technical Business Analyst · Product Thinking · Curious Mind</p>
 
-# Making complex platform challenges easier to understand, prioritise and solve.
+# From Complexity to Clarity
 
-<p class="lead">A portfolio of practical experiences and learning projects in internal platform teams, developer experience, discovery, agile delivery, and data-informed decisions.</p>
+<p class="lead">I'm a Technical Business Analyst with a background in Quality Analysis, a curious mind and a passion for understanding problems, connecting people and making complicated things simpler.</p>
 
-[Explore the projects]({{ '/projects/' | relative_url }}){: .button-link }
+Here, I share professional experiences, lessons learned, practical experiments and whatever sparks my curiosity along the way.
 
-## Featured work
+[Get to know me →]({{ '/about/' | relative_url }}){: .button-link }
+
+## Featured Case Studies
+
+A selection of my work in internal platform teams, exploring user research, agile delivery, developer experience and data-informed decisions.
 
 <div class="cards">
-  <div class="card"><h2>Platform as a Product</h2><p>Lessons from working with developers as platform users.</p><a href="{{ '/projects/platform-as-a-product/' | relative_url }}">Explore the project</a></div>
-  <div class="card"><h2>Vault → AWS Secrets Manager</h2><p>Research, discovery, user-story-mapping and migration planning.</p><a href="{{ '/projects/vault-to-aws-sm/' | relative_url }}">Explore the case study</a></div>
-  <div class="card"><h2>Flow Metrics & Forecasting</h2><p>Delivery insights and retrospective Monte Carlo simulations.</p><a href="{{ '/projects/flow-metrics/' | relative_url }}">Explore the case study</a></div>
-  <div class="card"><h2>Platform Success Metrics</h2><p>Self-service usage, support patterns and developer feedback.</p><a href="{{ '/projects/platform-success/' | relative_url }}">Explore the case study</a></div>
+{% assign featured_cases = site.case_studies | sort: "order" %}
+{% for case in featured_cases limit:3 %}
+  <article class="card">
+    <h3>
+      <a href="{{ case.url | relative_url }}">{{ case.title | escape }}</a>
+    </h3>
+    <p>{{ case.summary | escape }}</p>
+  </article>
+{% endfor %}
 </div>
 
-## About this Portfolio
+[Explore all case studies →]({{ '/case-studies/' | relative_url }})
 
-This portfolio brings together examples of my work as a Technical Business Analyst, lessons learned and practical exercises across product thinking, user research, technical discovery, agile delivery and metrics.
+## Ideas & Insights
 
-It reflects my interest in **Platform as a Product** and **Developer Experience**, particularly how understanding users' needs, encouraging collaboration and using data can help teams make better product decisions.
+A space for reflections, things I'm learning and ideas I'd like to share — from product thinking and developer experience to sailing and whatever comes next.
 
-My goal is to show not just the artefacts I've created, but **how I approach problems, challenge assumptions, collaborate with others and turn insights into meaningful improvements**.
+<div class="cards">
+{% assign recent_articles = site.insights | sort: "date" | reverse %}
+{% for article in recent_articles limit:3 %}
+  <article class="card">
+    <h3>
+      <a href="{{ article.url | relative_url }}">{{ article.title | escape }}</a>
+    </h3>
+    <p>{{ article.summary | escape }}</p>
+  </article>
+{% endfor %}
+</div>
 
-[Get to know me →]({{ '/about/' | relative_url }})
+[Explore all articles →]({{ '/ideas-and-insights/' | relative_url }})
+
+## A Little More About Me
+
+My journey into technology started in tourism and customer-facing roles before moving into Quality Analysis and Business Analysis.
+
+Outside work, I enjoy cooking, travelling, discovering different cultures and learning new things. My latest adventure is working towards my RYA Day Skipper certification and developing my sailing skills.
+
+This website is a space for both my professional work and the things I'm curious about beyond it.
+
+[More about me →]({{ '/about/' | relative_url }})
+
+---
 
 **A note on AI and confidentiality:** I used AI as a supporting tool to develop parts of this portfolio, including synthetic datasets, analytical exercises, writing and website development. The professional experiences and contributions described are my own. Examples are anonymised or reconstructed where necessary to protect confidentiality, and retrospective exercises are identified accordingly.

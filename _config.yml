@@ -6,5 +6,10 @@ markdown: kramdown
 kramdown:
   input: GFM
 permalink: pretty
+collections:
+  case_studies:
+    output: true
+  insights:
+    output: true
 exclude:
   - README.md

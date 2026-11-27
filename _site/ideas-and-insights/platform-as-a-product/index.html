@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Exploring product thinking, developer experience and data-informed decisions through real-world platform challenges.">
+  <title>Your Developers Are Users Too: What I Learned as a BA in a Platform Team · From Complexity to Clarity</title>
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container nav">
+      <nav aria-label="Main navigation">
+        <a href="/">Home</a>
+        <a href="/case-studies/">Case Studies</a>
+        <a href="/ideas-and-insights/">Ideas &amp; Insights</a>
+        <a href="/about/">About Me</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" tabindex="-1" class="container page-content">
+    <h1 id="your-developers-are-users-too-what-i-learned-as-a-ba-in-a-platform-team">Your Developers Are Users Too: What I Learned as a BA in a Platform Team</h1>
+
+<p><em>Reflections on product thinking, self-service and developer experience from both sides of an internal platform.</em></p>
+
+<h2 id="from-reactive-support-to-product-thinking">From Reactive Support to Product Thinking</h2>
+
+<p>Before becoming a Business Analyst in a Platform Team, I had already experienced the platform from the other side.</p>
+
+<p>I worked as a Quality Analyst in a stream-aligned team within the same project, and during my initial onboarding, I had also spent some time shadowing the Platform Team.</p>
+
+<p>Back then, my understanding of their role was mostly reactive. Teams would raise issues in the support channel, and the Platform Team would step in to solve infrastructure-related problems. From my perspective, they were the people you contacted when something wasn’t working.</p>
+
+<p>I knew they provided shared infrastructure and technical capabilities, but I couldn’t quite imagine what a roadmap for a platform team would look like. I hadn’t experienced them proactively asking us what we needed. Instead, it seemed that the platform capabilities were largely defined by what the team believed the consuming teams required.</p>
+
+<p>That perspective began to change when I returned to the project as a Business Analyst, this time joining the Platform Team itself.</p>
+
+<p>My Delivery Lead and Product Owner had a strong product-thinking mindset. Through conversations with them and resources they recommended, including Team Topologies, Platform Strategy: Innovation Through Harmonization by Gregor Hohpe, and the Product Talk blog, I gradually started to see the platform differently.</p>
+
+<p>I realised that a platform team didn’t have to be defined by support tickets and reactive work. It could have its own roadmap, understand its users, investigate their needs and proactively develop capabilities that made their daily work easier.</p>
+
+<p>And those users were the same developers, Quality Analysts and other delivery colleagues I had previously worked alongside.</p>
+
+<p><strong>That was the shift for me: seeing the platform not just as the infrastructure behind other products, but as a product in its own right, with users whose needs deserved to be understood.</strong></p>
+
+<h2 id="understanding-developers-as-users">Understanding Developers as Users</h2>
+
+<p>One of the things I appreciated most about working in an internal platform team was how close we were to our users. <strong>I used to say that our users were just a click away</strong>. I could simply open their calendars and arrange a conversation with the developers, QAs, BAs or other colleagues using our services.</p>
+
+<p>That proximity gave me a great opportunity to understand how they worked, what frustrated them and what could make their daily tasks easier. Instead of making assumptions about their needs, I could ask them directly.</p>
+
+<p>For specific initiatives, such as the migration from HashiCorp Vault to AWS Secrets Manager, I conducted user interviews to understand existing workflows, pain points and expectations. I also interviewed frequent users of our temporary production database access capability to understand their experience after its release.</p>
+
+<p>But learning about our users didn’t always require a formal interview. During PI Planning or other team events, I took opportunities to ask colleagues about our platform services and their experiences using them. Whenever we introduced changes, I also encouraged feedback through our Slack channel and reminded my teammates to keep their ears open for questions, frustrations or suggestions.</p>
+
+<p>I learned that <strong>user discovery doesn’t have to be limited to scheduled research sessions</strong>. Informal conversations, recurring support questions and spontaneous feedback can reveal valuable insights too.</p>
+
+<p>This also resonated with what I’d been learning from Teresa Torres’s work on <a href="https://www.producttalk.org/">continuous discovery</a>, particularly the importance of making interactions with users a regular part of product development.</p>
+
+<h2 id="self-service-helping-teams-work-independently">Self-Service: Helping Teams Work Independently</h2>
+
+<p>Before joining the Platform Team, I wasn’t particularly familiar with the concept of self-service in software delivery. I knew our platform provided infrastructure and technical capabilities, but I hadn’t fully appreciated how much difference it could make when teams could access those capabilities independently.</p>
+
+<p>Our platform offered workflows that allowed stream-aligned teams to perform activities such as provisioning databases without having to raise a support ticket and wait for someone from our team to handle every request.</p>
+
+<p>What might previously have involved several messages, handovers and waiting time could instead be handled through a standardised workflow.</p>
+
+<p>I began to understand that the value of a platform wasn’t just about providing the right infrastructure or technology. It was also about <strong>reducing friction and allowing development teams to focus on delivering their own products</strong>.</p>
+
+<h3 id="documentation-is-part-of-the-developer-experience">Documentation Is Part of the Developer Experience</h3>
+
+<p>One thing I learned was that self-service isn’t really self-service if people don’t know it exists or can’t figure out how to use it.</p>
+
+<p>We sometimes received support requests for activities that could already be completed through existing platform workflows. This made me realise that providing a capability wasn’t enough. Teams also needed to know where to find it, understand how it worked and feel confident using it.</p>
+
+<p>I contributed by reorganising our Confluence documentation, separating internal Platform Team procedures from guidance intended for stream-aligned teams, updating FAQs and making frequently needed information easier to find.</p>
+
+<p>For me, this reinforced that <strong>developer experience isn’t just about automation and technology</strong>. Clear documentation, understandable processes and accessible support information are just as important in helping people work independently.</p>
+
+<h2 id="why-a-platform-shouldnt-support-everything">Why a Platform Shouldn’t Support Everything</h2>
+
+<p>Another important lesson I learned was that a platform team doesn’t necessarily need to accommodate every request from every stream-aligned team.</p>
+
+<p>At first, this seemed counterintuitive. If our goal was to help developers work more effectively, shouldn’t we provide them with the technologies and services they needed?</p>
+
+<p>Over time, I understood that there was a difference between <strong>meeting a user’s needs and taking ownership of every solution they requested</strong>.</p>
+
+<p>For example, if one stream-aligned team needed a particular technology that wasn’t part of our platform’s standard offerings, it didn’t automatically mean our team should adopt and maintain it. Instead, we could provide the necessary foundations, such as access to AWS capabilities or the flexibility to extend a supported base image, allowing that team to manage the technology independently.</p>
+
+<p>This helped me understand the balance between <strong>standardisation and flexibility</strong>, a challenge also explored by Gregor Hohpe in <a href="https://architectelevator.com/book/platformstrategy/"><em>Platform Strategy: Innovation Through Harmonization</em></a>. A platform should provide reusable capabilities that benefit multiple teams, while giving individual teams enough autonomy to address their specific needs.</p>
+
+<h3 id="making-responsibilities-clear">Making Responsibilities Clear</h3>
+
+<p>Another challenge was ensuring that everyone understood where the Platform Team’s responsibilities ended and those of the stream-aligned teams began.</p>
+
+<p>We regularly received support tickets or Slack messages about issues that fell under the consuming teams’ responsibilities, particularly around their own CI/CD pipelines.</p>
+
+<p>This wasn’t always a technical problem. Often, people simply didn’t know where to find our shared responsibility model or other relevant information.</p>
+
+<p>I helped improve the visibility of our shared responsibility model through documentation, FAQs and conversations with colleagues.</p>
+
+<p>I began to see that <strong>clear responsibilities aren’t just about defining boundaries. They’re also about enabling autonomy</strong>.</p>
+
+<p>When teams understand what they can manage themselves, what the platform provides and when they need support, they can make decisions more independently.</p>
+
+<p>For me, this was another important part of product thinking: understanding not only what the platform should offer, but also what it shouldn’t own, and how to help its users succeed within those boundaries.</p>
+
+<h2 id="the-challenge-of-working-across-teams">The Challenge of Working Across Teams</h2>
+
+<p>One thing I hadn’t fully appreciated before joining the Platform Team was how challenging it could be to introduce changes that affected multiple development teams.</p>
+
+<p>Our platform supported 14 stream-aligned teams, each with its own priorities, deadlines and dependencies. A change that seemed straightforward from the platform’s perspective could have a significant impact on the teams using our services.</p>
+
+<p>For example, retiring an existing technology wasn’t simply a matter of deciding to stop supporting it. We first needed to understand which teams were still using it, what they depended on and what would be required for them to move to an alternative.</p>
+
+<p>This meant communicating upcoming changes, identifying dependencies, listening to concerns and coordinating the transition with teams that were also busy delivering their own products.</p>
+
+<p>I learned that even when the technical solution was clear, getting everyone ready for a change could be the more complicated part.</p>
+
+<p>It also made me appreciate the importance of looking beyond our own backlog. As a platform team, our priorities had to account for the needs and capacity of the teams depending on us. You can read more about one of these initiatives in my <a href="/case-studies/vault-migration/">Vault to AWS Secrets Manager case study</a>.</p>
+
+<p>For me, this was another valuable lesson in product thinking: <strong>building a useful platform isn’t just about choosing the right capabilities. It’s also about understanding how changes affect the people and teams relying on them.</strong></p>
+
+<h2 id="why-platform-teams-still-interest-me">Why Platform Teams Still Interest Me</h2>
+
+<p>Working in a platform team changed the way I think about building products and supporting the people who use them.</p>
+
+<p>What I find particularly rewarding is the opportunity to make other people’s work easier. Developers and other stream-aligned team members should be able to focus on building their products rather than spending unnecessary time navigating complicated processes, waiting for access or figuring out where to find help.</p>
+
+<p>I also enjoy the mix of challenges that platform teams bring. There’s technical complexity, but also plenty of opportunities to understand people’s needs, question assumptions, bring different perspectives together and make thoughtful product decisions.</p>
+
+<p>And that’s what makes the idea of Platform as a Product so interesting to me. It’s about remembering that, behind every pipeline, workflow or shared service, there are people trying to get something done.</p>
+
+<h2 id="further-reading--influences">Further Reading &amp; Influences</h2>
+
+<p>Some of the ideas explored in this article were shaped by conversations with my colleagues and the following resources:</p>
+
+<ul>
+  <li><a href="https://teamtopologies.com/"><em>Team Topologies: Organizing Business and Technology Teams for Fast Flow</em></a> — Matthew Skelton and Manuel Pais. A framework for understanding different team responsibilities, interactions and the role of platform teams in enabling stream-aligned teams.</li>
+  <li><a href="https://architectelevator.com/book/platformstrategy/"><em>Platform Strategy: Innovation Through Harmonization</em></a> — Gregor Hohpe. Insights into platform strategy, standardisation, flexibility and the trade-offs involved in building shared capabilities.</li>
+  <li><a href="https://www.producttalk.org/"><em>Product Talk</em></a> — Teresa Torres. Articles and resources about continuous discovery, understanding user needs and making product decisions informed by research.</li>
+</ul>
+
+<h3 id="ai-assistance-note">AI Assistance Note</h3>
+
+<p>I used ChatGPT to help structure, refine and edit this article. The experiences, observations and reflections are my own, and I reviewed the final content to ensure it accurately represents my perspective.</p>
+
+  </main>
+
+  
+<footer class="container footer">
+  <p>Made with curiosity.</p>
+
+  <nav class="footer-links" aria-label="Social profiles">
+
+    <a href="https://github.com/Jenbn/technical-ba-platform-portfolio">
+      <svg xmlns="http://www.w3.org/2000/svg"
+           width="20" height="20" viewBox="0 0 24 24"
+           fill="currentColor" aria-hidden="true" focusable="false">
+        <path d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.23c-3.34.73-4.04-1.42-4.04-1.42-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.83 1.23 1.83 1.23 1.07 1.83 2.81 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.34-5.47-5.93 0-1.31.47-2.38 1.23-3.22-.12-.3-.53-1.52.12-3.18 0 0 1-.32 3.3 1.23A11.5 11.5 0 0 1 12 6.1c1.02 0 2.05.14 3.01.4 2.29-1.55 3.29-1.23 3.29-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.6-2.81 5.63-5.49 5.93.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.82.57A12 12 0 0 0 12 .5Z"/>
+      </svg>
+      <span>GitHub</span>
+    </a>
+
+    <a href="https://www.linkedin.com/in/jenifer-deniz-rodriguez/">
+      <svg xmlns="http://www.w3.org/2000/svg"
+           width="20" height="20" viewBox="0 0 24 24"
+           fill="currentColor" aria-hidden="true" focusable="false">
+        <path d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.86 0 1.55-.68 1.55-1.52V3.52c0-.84-.69-1.52-1.55-1.52ZM7.93 18.75H4.98V9.2h2.95v9.55ZM6.45 7.9a1.71 1.71 0 1 1 0-3.42 1.71 1.71 0 0 1 0 3.42Zm12.3 10.85H15.8V14.1c0-1.11-.02-2.54-1.55-2.54-1.55 0-1.79 1.21-1.79 2.46v4.73H9.51V9.2h2.83v1.3h.04c.39-.74 1.35-1.52 2.78-1.52 2.97 0 3.59 1.95 3.59 4.49v5.28Z"/>
+      </svg>
+      <span>LinkedIn</span>
+    </a>
+
+  </nav>
+</footer>
+</body>
+</html>

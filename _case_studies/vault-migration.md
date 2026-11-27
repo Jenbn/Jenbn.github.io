@@ -1,7 +1,9 @@
 ---
 layout: default
-title: "Vault to AWS Secrets Manager — Case Study"
+title: "Understanding Users Before Migrating Secrets"
+summary: "How user research, story mapping and collaborative planning informed a migration from HashiCorp Vault to AWS Secrets Manager."
 permalink: /case-studies/vault-migration/
+order: 1
 ---
 
 # Understanding Users Before Migrating Secrets
